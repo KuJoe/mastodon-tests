@@ -50,6 +50,8 @@ $stats = getStats($response,'0','0','0','0','0');
 
 if($stats['backlog'] > '1' )  {
         echo "OVERLOADED<br />";
+} elseif($stats['max_threads'] < '1') {
+        echo "FAILED<br />";
 } else {
         echo "HEALTHY<br />";
 }
